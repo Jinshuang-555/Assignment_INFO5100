@@ -2,10 +2,8 @@ package Assignment4.Q2;
 
 public class Question2 {
     class TrafficLight {
-
         // Signal maintains the road which is green at the moment
         private final Signal signal;
-
         public TrafficLight() {
             signal = new Signal();
         }
