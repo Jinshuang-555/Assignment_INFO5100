@@ -31,7 +31,6 @@ public class Q4 {
          * For all movies released before 2000, add the string "(Classic)" to the title of the movie using
          * flatMap.
          */
-
         netflix.genres.stream().flatMap(genre -> genre.movies.stream())
                 .forEach(movie -> {
                     String title = movie.getTitle();
