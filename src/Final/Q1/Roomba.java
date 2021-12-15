@@ -28,7 +28,6 @@ public class Roomba implements iRobot{
         if (nextI <0 || nextI > row || nextJ<0 || nextJ > col || room[nextI][nextJ] == -1) { return false; }
         this.i = nextI;
         this.j = nextJ;
-        room[nextI][nextJ] = 1;
         return true;
     }
 
