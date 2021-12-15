@@ -31,6 +31,7 @@ public class Q4 {
          * For all movies released before 2000, add the string "(Classic)" to the title of the movie using
          * flatMap.
          */
+        System.out.println("===============flat map=================");
         netflix.genres.stream().flatMap(genre -> genre.movies.stream())
                 .forEach(movie -> {
                     String title = movie.getTitle();
@@ -58,6 +59,7 @@ public class Q4 {
          * Create a predicate for release date before 2000 and a predicate for release date before 1990
          * and then Chain the predicates for finding movies between 1990 and 2000.
          */
+        System.out.println("==============predicates==============");
         Predicate<Movie> before2000 = i -> (i.getDate().compareTo(new GregorianCalendar(2000, Calendar.FEBRUARY, 11).getTime())<0);
         Predicate<Movie> after1990 = i -> (i.getDate().compareTo(new GregorianCalendar(1990, Calendar.FEBRUARY, 11).getTime())>0);
         movies.stream()
@@ -68,6 +70,7 @@ public class Q4 {
          * Write a method which that will add release year in the title of the movie and return the title and
          * then use this method for all the movies
          */
+        System.out.println(" =================add year to title=============");
         for (Movie movie : movies) {
             turnTile(movie);
         }
@@ -78,12 +81,14 @@ public class Q4 {
         /**
          *  Sorting on one of the feature(Ex: Released year or title) which will use comparator.
          */
+        System.out.println(" ==============sort by title================");
         Collections.sort(movies, new Comparator<Movie>() {
             @Override
             public int compare(Movie o1, Movie o2) {
                 return o1.getTitle().compareTo(o2.getTitle());
             }
         });
+        movies.stream().forEach(o-> System.out.println(o.getTitle()));
     }
     /**
      * Write a method which that will add release year in the title of the movie and return the title and
